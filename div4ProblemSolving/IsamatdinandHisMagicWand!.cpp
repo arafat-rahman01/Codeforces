@@ -13,7 +13,7 @@ int main() {
             if (a[i] % 2 == 0) hasEven = true;
             else hasOdd = true;
         }
-        if (hasEven && hasOdd)sort(a.begin(), a.end());
+        if (hasEven && hasOdd) sort(a.begin(), a.end());
         for (int x : a) cout << x << " ";
         cout << "\n";
     }
