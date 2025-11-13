@@ -1,26 +1,23 @@
 #include<bits/stdc++.h>
 using namespace std;
 int main(){
-    int t;
-    cin>>t;
-    while(t--){
-        string s;cin>>s;
-        string p;cin>>p;
-        int f=true;
-        for(int i=0;i<s.length();i++){
-            for(int j=0;j<p.length();){
-                if((j<p.length()) && (s[i]!=p[j])){
-                    f=false;
-                }
-                else if((j<p.length()) && (s[i]==p[j] && s[i]==p[j+1])){
-                    j+=2;
-                }
-                else if((j+1<p.length()) && (s[i]==p[j] && s[i]!=p[j+1])){
-                    j++;
-                }
-            }
-        }
-        if(f) cout<<"YES"<<endl;
-        else cout<<"NO"<<endl;
-    }
+	int t;
+	cin>>t;
+	while(t--){
+		string p,s;
+		cin>>p>>s;
+		while(p.size()){
+			int pos=0;
+			while(pos<p.size()&&p[pos]==p[pos+1])pos++;
+			int num=pos+1;
+			char c=p[pos];
+			int k=0;
+			while(k<s.size()&&s[k]==c)k++;
+			if(k>=num&&k<=2*num)s.erase(0,k);
+			else break;
+			p.erase(0,num);
+		}
+		if(!s.size()&&!p.size())cout<<"YES"<<endl;
+		else cout<<"NO"<<endl;
+	}
 }
