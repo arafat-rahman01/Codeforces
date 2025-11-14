@@ -1,22 +1,18 @@
-#include <bits/stdc++.h>
+#include <iostream>
 using namespace std;
-#define ll long long
-int main(){
-    ll n; cin >> n;
-    vector <ll> arr(n);
-    for (auto &i : arr) cin >> i;
-    ll a;
-    for (ll i=0;i<n;i++) {
-        a = min(a, arr[i] / n);
-    }
-    int k = 0,ind = 0;
-    for (int i = 0;i<2*n;i++) {
-        if (i < n) arr[i] -= a * n;
-        if (arr[i%n] - k <= 0) {
-            ind = i;
-            break;
+int n, c, ml = 1000000001, t;
+int main()
+{
+    cin >> n;
+    for (int i = 1; i <= n; ++i)
+    {
+        cin >> t;
+        t = (t - i + n) / n;
+        if (t < ml)
+        {
+            ml = t;
+            c = i;
         }
-        ++k;
     }
-    cout << (ind % n) + 1 << endl;
+    cout << c;
 }
