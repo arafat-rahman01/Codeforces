@@ -1,12 +1,11 @@
-#include <iostream>
+#include<bits/stdc++.h>
 using namespace std;
 int main() {
-    int t;
+    long long t, a, b, n;
     cin >> t;
     while (t--) {
-        long long a, b, n;
-        cin >>a>>b>>n;
-        long long moves=(n*b+a-1)/a;
-        cout <<moves<<endl;
+        cin >> a >> b >> n;
+        if ((b*n) <= a || b >= a) cout << 1 << endl;
+        else if ((b*n) > a && b < a) cout << 2 << endl;
     }
 }
