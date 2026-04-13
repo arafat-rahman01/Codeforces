@@ -12,6 +12,6 @@ int main(){
             s+=arr[i];
         }
         if(n==1) cout<<arr[0]<<endl;
-        else cout<<s-(n-10<<endl;
+        else cout<<s-(n-10)<<endl;
     }
 }
