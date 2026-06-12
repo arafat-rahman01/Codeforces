@@ -7,6 +7,7 @@ int main(){
         long long a,b,c;
         cin >> a >> b >> c;
         long long tents = a;
+        
         if(b % 3 == 0){
             tents += b/3;
         }

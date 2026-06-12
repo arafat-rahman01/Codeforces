@@ -10,6 +10,7 @@ int main(){
             cin>>arr[i];
         }
         sort(arr,arr+n);
+        
         for(int i=0;i<n-1;i++){
             if(arr[i]!=arr[i+1] && (i+1)%2 == 0){
                 swap(arr[i],arr[i+1]);

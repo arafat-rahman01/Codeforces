@@ -10,7 +10,8 @@ int main(){
         int t=sqrt(n);
         if(t*t!=n){
             cout<<-1<<endl;
-        }else{
+        }
+        else{
             cout<<0<<" "<<t<<endl;
         }
     }
