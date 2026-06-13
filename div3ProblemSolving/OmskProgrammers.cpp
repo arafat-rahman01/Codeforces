@@ -3,28 +3,18 @@ using namespace std;
 int main(){
     int t;cin>>t;
     while(t--){
-        int a,b,x;
+        long long a,b,x;
         cin>>a>>b>>x;
-
-        if(a==b) cout<<0<<endl;
-        else if((a+1==b || b+1==a) || (a/x==b && b/x==a)){
-            cout<<"1: "<<1<<endl;
+        if(a>b) swap(a,b);
+        long long ans=LLONG_MAX;
+        long long c=0;
+        while(true){
+            ans=min(ans,c+(b-a));
+            if(a==b || b==0) break;
+            b/=x;
+            c++;
+            if(a>b) swap(a,b);
         }
-        else if((a+1!=b && b+1!=a) && (a/x==0 && b/x==0)){
-            cout<<"2: "<<2<<endl;
-        }
-        else if(a/x>b){
-            cout<<"3: "<<(a/x)-b+1<<endl;
-        }
-        else if(b/x>a){
-            cout<<"4: "<<(b/x)-a+1<<endl;
-        }
-        // else if(a/x<b){
-        //     cout<<"5: "<<b-a/x+1<<endl;
-        // }
-        else if(b/x<a){
-            cout<<"6 :"<<a-b/x+1<<endl;
-        }
-
+        cout<<ans<<endl;
     }
 }
